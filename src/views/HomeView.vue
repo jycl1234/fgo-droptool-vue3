@@ -1,9 +1,12 @@
-<!-- <script setup>
-import TheWelcome from '../components/TheWelcome.vue'
-</script> -->
+<script setup>
+import SheetSelector from '@/components/SheetSelector.vue'
+</script>
 
 <template>
   <main>
+    <div>
+      <SheetSelector />
+    </div>
     <p>
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec quis fermentum tellus. Morbi at
       tellus non odio ultrices porttitor. Etiam tristique orci sit amet molestie bibendum. Ut auctor

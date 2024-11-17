@@ -6,6 +6,8 @@
       <ul>
         <li>update node, npm</li>
         <li>setting up project via create vue@latest</li>
+        <li>scaffolding with basic project structure, porting over static assets and code</li>
+        <li>started sheet selector dropdown with state mgmt</li>
         <li>decisions:</li>
         <ul>
           <li>
@@ -13,8 +15,8 @@
           </li>
           <li>no jsx because unsure if needed and it was default</li>
           <li>no ts because of learning overhead; can revisit</li>
+          <li>installed sass-embedded for scss support but didn't bring in bootstrap</li>
         </ul>
-        <li>scaffolding with basic project structure, porting over static assets and code</li>
       </ul>
     </div>
   </div>
