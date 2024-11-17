@@ -5,6 +5,23 @@
   margin: 0 auto;
   padding: 2rem;
   font-weight: normal;
+  background: rgba(0, 0, 0, 0.9);
+  height: 100%;
+}
+
+h1 {
+  text-align: center;
+  color: #b5b5b5;
+  margin: 0 0 1rem 0;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.8);
+  font-size: 1.4rem;
+}
+
+h2 {
+  text-align: center;
+  color: #b5b5b5;
+  margin: 0 0 1rem 0;
+  font-size: 1.2rem;
 }
 
 a,
@@ -12,7 +29,6 @@ a,
   text-decoration: none;
   color: hsla(160, 100%, 37%, 1);
   transition: 0.4s;
-  padding: 3px;
 }
 
 @media (hover: hover) {
