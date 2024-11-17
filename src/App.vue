@@ -1,13 +1,10 @@
-<script setup>
-import { RouterLink, RouterView } from 'vue-router'
-</script>
-
 <template>
   <header>
-    <div class="wrapper">FGO Droptool for Vue 3</div>
+    <h1>FGO Droptool for Vue 3</h1>
     <nav>
       <RouterLink to="/">Home</RouterLink>
       <RouterLink to="/about">About</RouterLink>
+      <RouterLink to="/changelog">Changelog</RouterLink>
     </nav>
   </header>
 
@@ -16,9 +13,14 @@ import { RouterLink, RouterView } from 'vue-router'
   </div>
 </template>
 
-<style scoped>
-header {
-  line-height: 1.5;
-  max-height: 100vh;
+<style scoped lang="scss">
+nav {
+  display: grid;
+  grid-auto-flow: column;
+  margin-bottom: 1rem;
+
+  a {
+    text-align: center;
+  }
 }
 </style>
