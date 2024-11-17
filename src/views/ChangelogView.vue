@@ -19,6 +19,12 @@
         </ul>
       </ul>
     </div>
+    <div class="item">
+      <h3>Day 2</h3>
+      <ul>
+        <li>read up on vue and pinia docs, added two-way v-model binding</li>
+      </ul>
+    </div>
   </div>
 </template>
 

@@ -1,10 +1,17 @@
-import { ref } from 'vue'
+import { onMounted, ref } from 'vue'
 import { defineStore } from 'pinia'
+import { sheetIds } from '@/static/sheets'
 
 export const useStore = defineStore('store', () => {
-  const selectedMat = ref('test1')
-  const selectedSheet = ref('test2')
-  const sortOrder = ref('test3')
+  const selectedSheet = ref('')
+  const selectedMat = ref('')
+  const sortOrder = ref('')
 
-  return { selectedMat, selectedSheet, sortOrder }
+  // initialize to default (first) values
+
+  onMounted(() => {
+    selectedSheet.value = sheetIds[0]?.url
+  })
+
+  return { selectedSheet, selectedMat, sortOrder }
 })

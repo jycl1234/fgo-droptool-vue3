@@ -1,19 +1,15 @@
-<script>
+<script setup>
 import { sheetIds } from '@/static/sheets'
+import { useStore } from '@/stores/store'
+import { storeToRefs } from 'pinia'
 
-export default {
-  data() {
-    return {
-      sheetIds: sheetIds,
-    }
-  },
-}
+const { selectedSheet } = storeToRefs(useStore())
 </script>
 
 <template>
   <div>
-    <select>
-      <option v-for="sheet in sheetIds" v-bind:key="sheet.id" v-bind:value="sheet.url">
+    <select v-model="selectedSheet">
+      <option v-for="sheet in sheetIds" :key="sheet.id" :value="sheet.url">
         {{ sheet.title }}
       </option>
     </select>
