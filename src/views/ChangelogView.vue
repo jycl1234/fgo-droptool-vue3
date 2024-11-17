@@ -16,6 +16,7 @@
           <li>no jsx because unsure if needed and it was default</li>
           <li>no ts because of learning overhead; can revisit</li>
           <li>installed sass-embedded for scss support but didn't bring in bootstrap</li>
+          <li>merge to main instead of feat branches</li>
         </ul>
       </ul>
     </div>
