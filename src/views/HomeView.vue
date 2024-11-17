@@ -8,7 +8,7 @@ const { selectedSheet } = storeToRefs(useStore())
 
 <template>
   <main>
-    <div>
+    <div class="main" data-testid="main">
       <SheetSelector />
     </div>
     <p>{{ selectedSheet }}</p>

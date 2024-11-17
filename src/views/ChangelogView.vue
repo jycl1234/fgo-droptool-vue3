@@ -1,7 +1,7 @@
 <template>
-  <div class="changelog">
+  <div class="changelog" data-testid="changelog">
     <h2>Changelog</h2>
-    <div class="item">
+    <div class="item" data-testid="item">
       <h3>Day 1</h3>
       <ul>
         <li>update node, npm</li>
@@ -19,10 +19,11 @@
         </ul>
       </ul>
     </div>
-    <div class="item">
+    <div class="item" data-testid="item">
       <h3>Day 2</h3>
       <ul>
         <li>read up on vue and pinia docs, added two-way v-model binding</li>
+        <li>read up on vue testing utils and added basic unit testing</li>
       </ul>
     </div>
   </div>

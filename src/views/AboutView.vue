@@ -1,5 +1,5 @@
 <template>
-  <div class="about">
+  <div class="about" data-testid="about">
     <h2>About the Project</h2>
     <p>
       This project is a refactor of
