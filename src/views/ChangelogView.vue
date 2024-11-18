@@ -30,8 +30,21 @@
         <li>decisions:</li>
         <ul>
           <li>did not go with TDD as i find it slows down early greenfielding</li>
+          <li>did not bring in a style/component library to keep things focused</li>
           <li>decided not to look into browser mode for vitest due to config complications</li>
           <li>found updated method for generating mats.js, but kept it at manual update for now</li>
+        </ul>
+      </ul>
+    </div>
+    <div class="item" data-testid="item">
+      <h3>Day 3 (11/18/2024)</h3>
+      <ul>
+        <li>implemented results section and display toggle in state</li>
+        <li>brushed up on implementing axios client</li>
+        <li>implemented working api call to sheets api for results</li>
+        <li>decisions:</li>
+        <ul>
+          <li>hardcoding api key: doing it for speed, will offload to env vars long-term</li>
         </ul>
       </ul>
     </div>

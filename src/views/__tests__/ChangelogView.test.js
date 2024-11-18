@@ -11,6 +11,6 @@ describe('ChangelogView', () => {
 
     // https://github.com/vuejs/vue-test-utils/issues/1594#issuecomment-650052713
     // was concerned about findAll deprecation warning
-    expect(wrapper.findAll('[data-testid="item"]')).toHaveLength(2)
+    expect(wrapper.findAll('[data-testid="item"]')).toHaveLength(3)
   })
 })

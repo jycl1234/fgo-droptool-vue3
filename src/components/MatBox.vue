@@ -4,7 +4,7 @@ import { useStore } from '@/stores/store'
 const { fetchResults, setSelectedMat } = useStore()
 
 const handleClick = (mat) => {
-  setSelectedMat(mat.name)
+  setSelectedMat(mat)
   fetchResults()
 }
 
