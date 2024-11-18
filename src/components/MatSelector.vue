@@ -1,11 +1,8 @@
 <script setup>
 import { mats } from '@/static/mats'
 import MatBox from './MatBox.vue'
-import { useStore } from '@/stores/store'
-import { storeToRefs } from 'pinia'
 
 const filteredMats = mats
-const { selectedMat } = storeToRefs(useStore())
 </script>
 
 <template>
@@ -18,7 +15,6 @@ const { selectedMat } = storeToRefs(useStore())
       :key="mat.filename"
     />
   </div>
-  <div>Selected Mat: {{ selectedMat }}</div>
 </template>
 
 <style scoped lang="scss">
