@@ -1,10 +1,11 @@
 <script setup>
 import { useStore } from '@/stores/store'
 
-const { setCurrentMat } = useStore()
+const { fetchResults, setSelectedMat } = useStore()
 
 const handleClick = (mat) => {
-  setCurrentMat(mat.name)
+  setSelectedMat(mat.name)
+  fetchResults()
 }
 
 const getUrl = (mat) => {

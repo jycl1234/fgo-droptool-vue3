@@ -36,8 +36,9 @@ describe('MatBox', () => {
   // found a lot of stuff about browser mode in vitest which looked like a ton of
   // overhead and configuration; opted for a simpler method first
 
-  it('fires store method on click', async () => {
+  it('fires store methods on click', async () => {
     await wrapper.find('[data-testid="wrapper--mat-box"]').trigger('click')
-    expect(store.setCurrentMat).toHaveBeenCalledTimes(1)
+    expect(store.setSelectedMat).toHaveBeenCalledTimes(1)
+    expect(store.fetchResults).toHaveBeenCalledTimes(1)
   })
 })

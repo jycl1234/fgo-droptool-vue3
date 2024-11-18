@@ -17,8 +17,18 @@ describe('Store test', () => {
     expect(selectedSheet).toBe(sheetIds[0].url)
   })
 
-  it('setCurrentMat works as expected', () => {
-    store.setCurrentMat('test mat value')
+  it('setSelectedMat works as expected', () => {
+    store.setSelectedMat('test mat value')
     expect(store.selectedMat).toBe('test mat value')
+  })
+
+  it('setResultsArray works as expected', () => {
+    store.setResultsArray(['1', '2', '3'])
+    expect(store.resultsArray).toStrictEqual(['1', '2', '3'])
+  })
+
+  it('setSortOrder works as expected', () => {
+    store.setSortOrder('ASC')
+    expect(store.sortOrder).toBe('ASC')
   })
 })
