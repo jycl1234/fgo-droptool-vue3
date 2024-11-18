@@ -25,6 +25,7 @@
       <ul>
         <li>read up on vue and pinia docs, added two-way v-model binding</li>
         <li>read up on vue testing utils and added basic unit testing</li>
+        <li>added matselector parent component w/matboxes to homeview</li>
       </ul>
     </div>
   </div>
@@ -36,6 +37,8 @@ h3 {
 }
 
 .item {
+  margin-bottom: 1rem;
+
   ul {
     margin-left: 1rem;
   }

@@ -7,8 +7,8 @@ const { selectedSheet } = storeToRefs(useStore())
 </script>
 
 <template>
-  <div class="wrapper--selector" data-testid="wrapper--selector">
-    <select v-model="selectedSheet" class="selector" data-testid="selector">
+  <div class="wrapper--sheet-selector" data-testid="wrapper--sheet-selector">
+    <select v-model="selectedSheet" class="sheet-selector" data-testid="sheet-selector">
       <option
         v-for="sheet in sheetIds"
         :key="sheet.id"

@@ -13,8 +13,8 @@ describe('SheetSelector', () => {
         plugins: [pinia],
       },
     })
-    expect(wrapper.find('[data-testid="wrapper--selector"]').exists()).toBe(true)
-    expect(wrapper.find('[data-testid="selector"]').exists()).toBe(true)
+    expect(wrapper.find('[data-testid="wrapper--sheet-selector"]').exists()).toBe(true)
+    expect(wrapper.find('[data-testid="sheet-selector"]').exists()).toBe(true)
     expect(wrapper.findAll('[data-testid="option"]').length).toBe(count)
   })
 })
