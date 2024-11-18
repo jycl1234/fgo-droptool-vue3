@@ -23,8 +23,13 @@ describe('Store test', () => {
   })
 
   it('setSelectedMat works as expected', () => {
-    store.setSelectedMat('test mat value')
-    expect(store.selectedMat).toBe('test mat value')
+    store.setSelectedMat({ name: 'test mat value' })
+    expect(store.selectedMat).toStrictEqual({ name: 'test mat value' })
+    expect(store.isCollapsed).toBe(true)
+
+    store.setSelectedMat({})
+    expect(store.selectedMat).toStrictEqual({})
+    expect(store.isCollapsed).toBe(false)
   })
 
   it('setSortOrder works as expected', () => {
@@ -40,6 +45,11 @@ describe('Store test', () => {
   it('setIsLoading works as expected', () => {
     store.setIsLoading(true)
     expect(store.isLoading).toBe(true)
+  })
+
+  it('setIsCollapsed works as expected', () => {
+    store.setIsCollapsed(true)
+    expect(store.isCollapsed).toBe(true)
   })
 
   // stub('fetchResults works as expected', () => {})

@@ -10,6 +10,7 @@ export const useStore = defineStore('store', () => {
   const sortOrder = ref('')
   const resultsArray = ref([])
   const isLoading = ref(false)
+  const isCollapsed = ref(false)
 
   const setSelectedSheet = (sheet) => {
     selectedSheet.value = sheet
@@ -17,6 +18,11 @@ export const useStore = defineStore('store', () => {
 
   const setSelectedMat = (mat) => {
     selectedMat.value = mat
+    if (Object.keys(mat).length === 0) {
+      setIsCollapsed(false)
+    } else {
+      setIsCollapsed(true)
+    }
   }
 
   const setSortOrder = (order) => {
@@ -31,8 +37,13 @@ export const useStore = defineStore('store', () => {
     isLoading.value = loading
   }
 
+  const setIsCollapsed = (collapsed) => {
+    isCollapsed.value = collapsed
+  }
+
   const fetchResults = async () => {
     setIsLoading(true)
+    setResultsArray([])
     const url = `${BASE_URL}${SPREADSHEET_ID}?ranges=${selectedSheet.value}!${selectedMat.value.startRange}:${selectedMat.value.endRange}&fields=sheets&key=${API_KEY}`
     axios
       .get(url)
@@ -63,13 +74,15 @@ export const useStore = defineStore('store', () => {
   initializeStore()
 
   return {
-    fetchResults,
     isLoading,
+    isCollapsed,
     resultsArray,
     selectedSheet,
     selectedMat,
     sortOrder,
+    fetchResults,
     setIsLoading,
+    setIsCollapsed,
     setSelectedMat,
     setSelectedSheet,
     setResultsArray,
