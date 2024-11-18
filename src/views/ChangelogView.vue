@@ -2,7 +2,7 @@
   <div class="changelog" data-testid="changelog">
     <h2>Changelog</h2>
     <div class="item" data-testid="item">
-      <h3>Day 1</h3>
+      <h3>Day 1 (11/16/2024)</h3>
       <ul>
         <li>update node, npm</li>
         <li>setting up project via create vue@latest</li>
@@ -21,12 +21,18 @@
       </ul>
     </div>
     <div class="item" data-testid="item">
-      <h3>Day 2</h3>
+      <h3>Day 2 (11/17/2024)</h3>
       <ul>
         <li>read up on vue and pinia docs, added two-way v-model binding</li>
         <li>read up on vue testing utils and added basic unit testing</li>
         <li>added matselector parent component w/matboxes to homeview</li>
         <li>updated mats.js to latest from sheet</li>
+        <li>decisions:</li>
+        <ul>
+          <li>did not go with TDD as i find it slows down early greenfielding</li>
+          <li>decided not to look into browser mode for vitest due to config complications</li>
+          <li>found updated method for generating mats.js, but kept it at manual update for now</li>
+        </ul>
       </ul>
     </div>
   </div>
