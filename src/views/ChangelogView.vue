@@ -42,9 +42,11 @@
         <li>implemented results section and display toggle in state</li>
         <li>brushed up on implementing axios client</li>
         <li>implemented working api call to sheets api for results</li>
+        <li>implemented selector collapse, loading indicator, and raw results view</li>
         <li>decisions:</li>
         <ul>
           <li>hardcoding api key: doing it for speed, will offload to env vars long-term</li>
+          <li>stubbing the fetchResults test in store</li>
         </ul>
       </ul>
     </div>
