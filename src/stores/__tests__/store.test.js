@@ -16,4 +16,9 @@ describe('Store test', () => {
     expect(store).toBeTruthy()
     expect(selectedSheet).toBe(sheetIds[0].url)
   })
+
+  it('setCurrentMat works as expected', () => {
+    store.setCurrentMat('test mat value')
+    expect(store.selectedMat).toBe('test mat value')
+  })
 })

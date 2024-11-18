@@ -1,15 +1,23 @@
 <script setup>
-defineProps({
-  mat: Object,
-})
+import { useStore } from '@/stores/store'
+
+const { setCurrentMat } = useStore()
+
+const handleClick = (mat) => {
+  setCurrentMat(mat.name)
+}
 
 const getUrl = (mat) => {
   return `https://static.atlasacademy.io/JP/Items/${mat.filename}_bordered.png`
 }
+
+defineProps({
+  mat: Object,
+})
 </script>
 
 <template>
-  <div class="wrapper--mat-box" data-testid="wrapper--mat-box">
+  <div class="wrapper--mat-box" data-testid="wrapper--mat-box" @click="handleClick(mat)">
     <img class="image--mat" data-testid="image--mat" :src="getUrl(mat)" />
   </div>
 </template>

@@ -11,7 +11,11 @@ export const useStore = defineStore('store', () => {
     selectedSheet.value = sheetIds[0]?.url
   }
 
+  const setCurrentMat = (mat) => {
+    selectedMat.value = mat
+  }
+
   initializeStore()
 
-  return { selectedSheet, selectedMat, sortOrder }
+  return { selectedSheet, selectedMat, setCurrentMat, sortOrder }
 })
