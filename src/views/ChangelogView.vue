@@ -26,6 +26,7 @@
         <li>read up on vue and pinia docs, added two-way v-model binding</li>
         <li>read up on vue testing utils and added basic unit testing</li>
         <li>added matselector parent component w/matboxes to homeview</li>
+        <li>updated mats.js to latest from sheet</li>
       </ul>
     </div>
   </div>
