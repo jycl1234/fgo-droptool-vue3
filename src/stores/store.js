@@ -2,7 +2,8 @@ import { ref } from 'vue'
 import { defineStore } from 'pinia'
 import axios from 'axios'
 import { sheetIds } from '@/static/sheets'
-import { API_KEY, BASE_URL, SPREADSHEET_ID } from '@/static/constants'
+import { BASE_URL, SPREADSHEET_ID } from '@/static/constants'
+import { API_KEY } from '@/static/apiKey'
 
 export const useStore = defineStore('store', () => {
   const selectedSheet = ref('')
