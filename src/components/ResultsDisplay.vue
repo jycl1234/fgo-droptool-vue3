@@ -7,7 +7,6 @@ const { isLoading, resultsArray } = storeToRefs(useStore())
 
 <template>
   <div class="wrapper--results-display" data-testid="wrapper--results-display">
-    <!-- selectedMat toggle to uncollapse -->
     <div
       v-if="resultsArray.length > 0"
       class="wrapper--results-rows"

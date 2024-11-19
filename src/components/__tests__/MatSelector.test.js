@@ -25,11 +25,12 @@ describe('MatSelector', () => {
     expect(wrapper.findAllComponents(MatBox).length).toBeGreaterThan(1)
   })
 
-  it('if isCollapsed is true, renders nothing', async () => {
+  it('if isCollapsed is true, renders collapsed version', async () => {
     store.isCollapsed = true
     await wrapper.vm.$nextTick()
 
     expect(wrapper.find('[data-testid="wrapper--mat-selector"]').exists()).toBe(false)
-    expect(wrapper.findAllComponents(MatBox).length).toBe(0)
+    expect(wrapper.find('[data-testid="wrapper--mat-selector-collapsed"]').exists()).toBe(true)
+    expect(wrapper.findAllComponents(MatBox).length).toBe(1)
   })
 })

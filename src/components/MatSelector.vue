@@ -2,11 +2,12 @@
 import { useStore } from '@/stores/store'
 import { storeToRefs } from 'pinia'
 import { mats } from '@/static/mats'
+import { MODE_OPEN, MODE_COLLAPSED } from '@/static/constants'
 import MatBox from './MatBox.vue'
 
 const filteredMats = mats
 
-const { isCollapsed } = storeToRefs(useStore())
+const { isCollapsed, selectedMat } = storeToRefs(useStore())
 </script>
 
 <template>
@@ -16,7 +17,17 @@ const { isCollapsed } = storeToRefs(useStore())
       data-testid="matbox"
       v-for="mat in filteredMats"
       :mat="mat"
+      :mode="MODE_OPEN"
       :key="mat.filename"
+    />
+  </div>
+  <div v-else class="wrapper--mat-selector-collapsed" data-testid="wrapper--mat-selector-collapsed">
+    <MatBox
+      class="matbox"
+      data-testid="matbox"
+      :mat="selectedMat"
+      :mode="MODE_COLLAPSED"
+      :key="selectedMat.filename"
     />
   </div>
 </template>
