@@ -51,6 +51,14 @@
         </ul>
       </ul>
     </div>
+    <div class="item" data-testid="item">
+      <h3>Day 4 (11/19/2024)</h3>
+      <ul>
+        <li>refactored getImgUrl for reuse</li>
+        <li>added selected mat box component and improved collapse toggle logic</li>
+        <li>went back and added fetchResults test in store</li>
+      </ul>
+    </div>
   </div>
 </template>
 

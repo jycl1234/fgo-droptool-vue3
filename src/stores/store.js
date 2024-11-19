@@ -70,6 +70,7 @@ export const useStore = defineStore('store', () => {
       .catch((err) => {
         setIsLoading(false)
         setResultsArray([])
+        // there's an entire bunch of stuff that can be done to improve err handling here
         console.log('error', err)
       })
   }
