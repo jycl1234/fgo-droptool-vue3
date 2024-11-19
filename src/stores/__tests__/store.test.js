@@ -52,5 +52,15 @@ describe('Store test', () => {
     expect(store.isCollapsed).toBe(true)
   })
 
+  it('clearResults works as expected', () => {
+    store.setIsCollapsed(true)
+    store.setSelectedMat({ name: 'test mat' })
+    store.setResultsArray(['1', '2', '3'])
+    store.clearResults()
+    expect(store.isCollapsed).toBe(false)
+    expect(store.selectedMat).toStrictEqual({})
+    expect(store.resultsArray).toStrictEqual([])
+  })
+
   // stub('fetchResults works as expected', () => {})
 })

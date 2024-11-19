@@ -42,6 +42,12 @@ export const useStore = defineStore('store', () => {
     isCollapsed.value = collapsed
   }
 
+  const clearResults = () => {
+    setIsCollapsed(false)
+    setSelectedMat({})
+    setResultsArray([])
+  }
+
   const fetchResults = async () => {
     setIsLoading(true)
     setResultsArray([])
@@ -75,6 +81,7 @@ export const useStore = defineStore('store', () => {
   initializeStore()
 
   return {
+    clearResults,
     isLoading,
     isCollapsed,
     resultsArray,
