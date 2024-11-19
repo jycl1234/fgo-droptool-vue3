@@ -43,6 +43,7 @@
         <li>brushed up on implementing axios client</li>
         <li>implemented working api call to sheets api for results</li>
         <li>implemented selector collapse, loading indicator, and raw results view</li>
+        <li>fixed api key exposure</li>
         <li>decisions:</li>
         <ul>
           <li>hardcoding api key: doing it for speed, will offload to env vars long-term</li>
