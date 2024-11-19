@@ -1,15 +1,12 @@
 <script setup>
 import { useStore } from '@/stores/store'
+import { getImgUrl } from '@/static/utils'
 
 const { fetchResults, setSelectedMat } = useStore()
 
 const handleClick = (mat) => {
   setSelectedMat(mat)
   fetchResults()
-}
-
-const getUrl = (mat) => {
-  return `https://static.atlasacademy.io/JP/Items/${mat.filename}_bordered.png`
 }
 
 defineProps({
@@ -19,7 +16,7 @@ defineProps({
 
 <template>
   <div class="wrapper--mat-box" data-testid="wrapper--mat-box" @click="handleClick(mat)">
-    <img class="image--mat" data-testid="image--mat" :src="getUrl(mat)" />
+    <img class="image--mat" data-testid="image--mat" :src="getImgUrl(mat)" />
   </div>
 </template>
 
