@@ -59,6 +59,19 @@
         <li>went back and added fetchResults test in store</li>
       </ul>
     </div>
+    <div class="item" data-testid="item">
+      <h3>Day 5 (11/20/2024)</h3>
+      <ul>
+        <li>added helper func to parse and mutate API data</li>
+        <li>added ResultsRow to render results</li>
+      </ul>
+    </div>
+    <div class="item" data-testid="item">
+      <h3>Day 6 (11/21/2024)</h3>
+      <ul>
+        <li>rewriting README for project overview</li>
+      </ul>
+    </div>
   </div>
 </template>
 
