@@ -40,6 +40,10 @@ defineProps({
 </template>
 
 <style scoped lang="scss">
+.wrapper--mat-box-collapsed {
+  justify-content: center;
+  margin-bottom: 1rem;
+}
 .wrapper--mat-box,
 .wrapper--mat-box-collapsed {
   display: flex;

@@ -21,3 +21,17 @@ const { selectedSheet } = storeToRefs(useStore())
     </select>
   </div>
 </template>
+
+<style scoped lang="scss">
+.wrapper--sheet-selector {
+  text-align: center;
+
+  .sheet-selector {
+    line-height: 1.4;
+    font-family: 'Quicksand', Arial, sans-serif;
+    font-size: 0.9rem;
+    min-width: 180px;
+    margin-bottom: 1rem;
+  }
+}
+</style>
