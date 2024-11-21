@@ -19,7 +19,6 @@ With the decision to use Vue, I knew that I would be spending a good amount of m
 
 ## TODO
 
-- fix sheet selector change event/model binding
 - add rarity filters
 - add sort order (gold -> silver -> bronze and vice versa)
 

@@ -4,11 +4,21 @@ import { useStore } from '@/stores/store'
 import { storeToRefs } from 'pinia'
 
 const { selectedSheet } = storeToRefs(useStore())
+const { fetchResults } = useStore()
+
+const handleChange = () => {
+  fetchResults()
+}
 </script>
 
 <template>
   <div class="wrapper--sheet-selector" data-testid="wrapper--sheet-selector">
-    <select v-model="selectedSheet" class="sheet-selector" data-testid="sheet-selector">
+    <select
+      v-model="selectedSheet"
+      class="sheet-selector"
+      data-testid="sheet-selector"
+      @change="handleChange"
+    >
       <option
         v-for="sheet in sheetIds"
         :key="sheet.id"

@@ -49,8 +49,8 @@ describe('Store test', () => {
   })
 
   it('clearResults works as expected', () => {
-    store.$patch({ isCollapsed: true })
-    store.$patch({ resultsArray: ['1', '2', '3'] })
+    store.isCollapsed = true
+    store.resultsArray = ['1', '2', '3']
     store.setSelectedMat({ name: 'test mat' })
 
     store.clearResults()
@@ -61,7 +61,7 @@ describe('Store test', () => {
   })
 
   it('fetchResults works as expected', async () => {
-    store.$patch({ selectedSheet: sheetIds[0].url })
+    store.selectedSheet = sheetIds[0].url
     store.setSelectedMat(mats[0])
 
     axios.get.mockResolvedValueOnce({
