@@ -1,6 +1,7 @@
 import { describe, it, expect } from 'vitest'
 import { mats } from '@/static/mats'
-import { convertToResultsRow, emptyRow, getImgUrl } from '../utils'
+import { convertToResultsRow, getImgUrl } from '../utils'
+import { emptyRow } from '../constants'
 
 const mat = mats[0]
 const validRowData = {
@@ -53,7 +54,7 @@ describe('Utils test', () => {
     expect(result2).toStrictEqual({
       area: values[2].formattedValue,
       quest: values[3].formattedValue,
-      questLink: values[3].hyperlink,
+      hyperlink: values[3].hyperlink,
       ap: values[4].formattedValue,
       bpPerAp: values[5].formattedValue,
       apPerDrop: values[6].formattedValue,

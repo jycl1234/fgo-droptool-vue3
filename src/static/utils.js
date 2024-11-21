@@ -1,13 +1,4 @@
-const emptyRow = {
-  area: '',
-  quest: '',
-  questLink: null,
-  ap: '',
-  bpPerAp: '',
-  apPerDrop: '',
-  dropChance: '',
-  runs: '',
-}
+import { emptyRow } from '@/static/constants'
 
 /*
 convertToResultsRow()
@@ -23,7 +14,7 @@ const convertToResultsRow = (rowData) => {
     return {
       area: rowData.values[2].formattedValue,
       quest: rowData.values[3].formattedValue,
-      questLink: rowData.values[3].hyperlink ? rowData.values[3].hyperlink : null,
+      hyperlink: rowData.values[3].hyperlink ? rowData.values[3].hyperlink : null,
       ap: rowData.values[4].formattedValue,
       bpPerAp: rowData.values[5].formattedValue,
       apPerDrop: rowData.values[6].formattedValue,
@@ -47,4 +38,4 @@ const getImgUrl = (mat) => {
   return `https://static.atlasacademy.io/JP/Items/${mat.filename}_bordered.png`
 }
 
-export { convertToResultsRow, emptyRow, getImgUrl }
+export { convertToResultsRow, getImgUrl }
