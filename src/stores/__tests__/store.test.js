@@ -38,11 +38,6 @@ describe('Store test', () => {
     expect(selectedSheet).toBe(sheetIds[0].url)
   })
 
-  it('setSelectedSheet works as expected', () => {
-    store.setSelectedSheet('test sheet value')
-    expect(store.selectedSheet).toBe('test sheet value')
-  })
-
   it('setSelectedMat works as expected', () => {
     store.setSelectedMat({ name: 'test mat value' })
     expect(store.selectedMat).toStrictEqual({ name: 'test mat value' })
@@ -53,39 +48,20 @@ describe('Store test', () => {
     expect(store.isCollapsed).toBe(false)
   })
 
-  it('setSortOrder works as expected', () => {
-    store.setSortOrder('ASC')
-    expect(store.sortOrder).toBe('ASC')
-  })
-
-  it('setResultsArray works as expected', () => {
-    store.setResultsArray(['1', '2', '3'])
-    expect(store.resultsArray).toStrictEqual(['1', '2', '3'])
-  })
-
-  it('setIsLoading works as expected', () => {
-    store.setIsLoading(true)
-    expect(store.isLoading).toBe(true)
-  })
-
-  it('setIsCollapsed works as expected', () => {
-    store.setIsCollapsed(true)
-    expect(store.isCollapsed).toBe(true)
-  })
-
   it('clearResults works as expected', () => {
-    store.setIsCollapsed(true)
+    store.$patch({ isCollapsed: true })
+    store.$patch({ resultsArray: ['1', '2', '3'] })
     store.setSelectedMat({ name: 'test mat' })
-    store.setResultsArray(['1', '2', '3'])
+
     store.clearResults()
+
     expect(store.isCollapsed).toBe(false)
     expect(store.selectedMat).toStrictEqual({})
     expect(store.resultsArray).toStrictEqual([])
   })
 
   it('fetchResults works as expected', async () => {
-    // `${BASE_URL}${SPREADSHEET_ID}?ranges=${selectedSheet.value}!${selectedMat.value.startRange}:${selectedMat.value.endRange}&fields=sheets&key=${API_KEY}`
-    store.setSelectedSheet(sheetIds[0].url)
+    store.$patch({ selectedSheet: sheetIds[0].url })
     store.setSelectedMat(mats[0])
 
     axios.get.mockResolvedValueOnce({

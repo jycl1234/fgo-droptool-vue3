@@ -17,6 +17,12 @@ The idea of refactoring the droptool was not new, but up until now I really hadn
 
 With the decision to use Vue, I knew that I would be spending a good amount of my time reading documentation, trying things and failing, and rewriting as I picked up new patterns and ideas. This worked hand-in-hand with the decision to refactor instead of designing and coding an entirely new app, as the mental bandwidth required would be lower. However, I knew that I would not be able to get away with a simple lift and shift, or even a basic refactor. Many of the design choices I'd made on the original project -- keeping business logic in components, overloading component functionality, opting not to write tests, using local storage over state management -- would not be the correct choice now, so the project would need to demonstrate what I have learned in those areas.
 
+## TODO
+
+- fix sheet selector change event/model binding
+- add rarity filters
+- add sort order (gold -> silver -> bronze and vice versa)
+
 ## Project Hierarchy
 
 ## Component Architecture
@@ -48,6 +54,7 @@ With the decision to use Vue, I knew that I would be spending a good amount of m
   -- css rewrite to use grids
   -- reusable components
 - new features
+  -- improved err handling
   -- bookmarked/linkable searches
   -- efficiency comparison
   -- multi-mat efficiency calculator
