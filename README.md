@@ -42,6 +42,8 @@ With the decision to use Vue, I knew that I would be spending a good amount of m
   -- cdn to cache imgs
 - env vars
   -- api key, sheet id
+- typescript
+  -- interfaces for rowData and payload/response types
 - ui library
   -- css rewrite to use grids
   -- reusable components

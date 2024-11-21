@@ -70,6 +70,7 @@
       <h3>Day 6 (11/21/2024)</h3>
       <ul>
         <li>rewriting README for project overview</li>
+        <li>finished up testing for new components/logic</li>
       </ul>
     </div>
   </div>
