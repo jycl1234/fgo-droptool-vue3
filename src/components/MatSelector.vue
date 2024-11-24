@@ -1,13 +1,10 @@
 <script setup>
 import { useStore } from '@/stores/store'
 import { storeToRefs } from 'pinia'
-import { mats } from '@/static/mats'
 import { MODE_OPEN, MODE_COLLAPSED } from '@/static/constants'
 import MatBox from './MatBox.vue'
 
-const filteredMats = mats
-
-const { isCollapsed, selectedMat } = storeToRefs(useStore())
+const { isCollapsed, matsArray, selectedMat } = storeToRefs(useStore())
 </script>
 
 <template>
@@ -15,7 +12,7 @@ const { isCollapsed, selectedMat } = storeToRefs(useStore())
     <MatBox
       class="matbox"
       data-testid="matbox"
-      v-for="mat in filteredMats"
+      v-for="mat in matsArray"
       :mat="mat"
       :mode="MODE_OPEN"
       :key="mat.filename"

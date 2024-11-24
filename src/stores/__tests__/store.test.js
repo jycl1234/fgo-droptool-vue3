@@ -36,6 +36,7 @@ describe('Store test', () => {
     const { selectedSheet } = store
     expect(store).toBeTruthy()
     expect(selectedSheet).toBe(sheetIds[0].url)
+    expect(store.matsArray.length).toBeGreaterThan(1)
   })
 
   it('setSelectedMat works as expected', () => {

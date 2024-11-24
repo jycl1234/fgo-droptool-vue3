@@ -1,6 +1,6 @@
 import { describe, it, expect } from 'vitest'
 import { mats } from '@/static/mats'
-import { convertToResultsRow, getImgUrl } from '../utils'
+import { convertToResultsRow, getImgUrl, sortMats } from '../utils'
 import { emptyRow } from '../constants'
 
 const mat = mats[0]
@@ -66,5 +66,10 @@ describe('Utils test', () => {
   it('getImgUrl works as expected', () => {
     const result = getImgUrl(mat)
     expect(result).toBe(`https://static.atlasacademy.io/JP/Items/${mat.filename}_bordered.png`)
+  })
+
+  it('sortMats works as expected', () => {
+    const result = sortMats()
+    expect(result.length).toEqual(mats.length)
   })
 })

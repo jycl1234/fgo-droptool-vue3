@@ -73,6 +73,12 @@
         <li>finished up testing for new components/logic</li>
       </ul>
     </div>
+    <div class="item" data-testid="item">
+      <h3>Day 7 (11/23/2024)</h3>
+      <ul>
+        <li>added sorting and filtering options</li>
+      </ul>
+    </div>
   </div>
 </template>
 

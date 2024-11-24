@@ -4,11 +4,13 @@ import axios from 'axios'
 import { sheetIds } from '@/static/sheets'
 import { BASE_URL, SPREADSHEET_ID } from '@/static/constants'
 import { API_KEY } from '@/static/apiKey'
+import { sortMats } from '@/static/utils'
 
 export const useStore = defineStore('store', () => {
   const selectedSheet = ref('')
   const selectedMat = ref({})
   const sortOrder = ref('')
+  const matsArray = ref([])
   const resultsArray = ref([])
   const isLoading = ref(false)
   const isCollapsed = ref(false)
@@ -57,6 +59,7 @@ export const useStore = defineStore('store', () => {
 
   const initializeStore = () => {
     selectedSheet.value = sheetIds[0]?.url
+    matsArray.value = sortMats()
   }
 
   initializeStore()
@@ -65,6 +68,7 @@ export const useStore = defineStore('store', () => {
     clearResults,
     isLoading,
     isCollapsed,
+    matsArray,
     resultsArray,
     selectedSheet,
     selectedMat,
