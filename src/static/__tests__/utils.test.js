@@ -2,7 +2,7 @@ import { describe, it, expect, vi } from 'vitest'
 import { mockMats } from '../__mocks__/mockMats'
 import { invalidRowData, validRowData } from '../__mocks__/mockRowData'
 import { convertToResultsRow, getImgUrl, sortMats } from '../utils'
-import { emptyRow } from '../constants'
+import { emptyRow, SORT_ASC, SORT_DESC } from '../constants'
 
 vi.mock('../mats', () => ({
   mats: mockMats,
@@ -37,5 +37,17 @@ describe('Utils test', () => {
   it('sortMats works as expected', () => {
     const result = sortMats()
     expect(result.length).toEqual(mockMats.length)
+
+    const result2 = sortMats({ order: SORT_ASC })
+    expect(result2.length).toEqual(mockMats.length)
+    expect(result2.filter((mat) => mat.type === 'mat')[0].name).toContain('Evil Bone')
+    expect(result2.filter((mat) => mat.type === 'ascension')[0].name).toContain('Saber Piece')
+    expect(result2.filter((mat) => mat.type === 'skill')[0].name).toContain('Gem of Saber')
+
+    const result3 = sortMats({ order: SORT_DESC })
+    expect(result3.length).toEqual(mockMats.length)
+    expect(result3.filter((mat) => mat.type === 'mat')[0].name).toContain('Claw of Chaos')
+    expect(result3.filter((mat) => mat.type === 'ascension')[0].name).toContain('Saber Monument')
+    expect(result3.filter((mat) => mat.type === 'skill')[0].name).toContain('Secret Gem of Saber')
   })
 })

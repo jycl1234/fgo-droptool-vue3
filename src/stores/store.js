@@ -2,7 +2,7 @@ import { ref } from 'vue'
 import { defineStore } from 'pinia'
 import axios from 'axios'
 import { sheetIds } from '@/static/sheets'
-import { BASE_URL, SPREADSHEET_ID } from '@/static/constants'
+import { BASE_URL, SORT_ASC, SPREADSHEET_ID } from '@/static/constants'
 import { API_KEY } from '@/static/apiKey'
 import { sortMats } from '@/static/utils'
 
@@ -59,7 +59,10 @@ export const useStore = defineStore('store', () => {
 
   const initializeStore = () => {
     selectedSheet.value = sheetIds[0]?.url
-    matsArray.value = sortMats()
+    sortOrder.value = SORT_ASC
+    matsArray.value = sortMats({
+      order: SORT_ASC,
+    })
   }
 
   initializeStore()

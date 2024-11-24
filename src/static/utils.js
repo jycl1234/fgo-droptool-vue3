@@ -1,4 +1,4 @@
-import { emptyRow } from '@/static/constants'
+import { emptyRow, SORT_ASC, SORT_DESC } from '@/static/constants'
 import { mats } from '@/static/mats'
 
 const matsGold = mats.filter((mat) => mat.type === 'mat' && mat.rarity === 'gold')
@@ -52,18 +52,38 @@ const getImgUrl = (mat) => {
 output: {Array}
 
 accepts sorting/filtering options, and returns an array based on the options passed
+NOTE: not an alphabetical sort. this only sorts the entire mats array by rarity order,
+and will not reorder mats inside of its rarity tier
 */
 
-const sortMats = () => {
+const sortMats = (options) => {
   const result = []
-  result.push(...matsBronze)
-  result.push(...matsSilver)
-  result.push(...matsGold)
-  result.push(...gemsBronze)
-  result.push(...gemsSilver)
-  result.push(...gemsGold)
-  result.push(...piecesSilver)
-  result.push(...piecesGold)
+  const { order } = options ?? {}
+
+  // default to ASC if not provided
+
+  if (!order || order == SORT_ASC) {
+    result.push(...matsBronze)
+    result.push(...matsSilver)
+    result.push(...matsGold)
+    result.push(...gemsBronze)
+    result.push(...gemsSilver)
+    result.push(...gemsGold)
+    result.push(...piecesSilver)
+    result.push(...piecesGold)
+  }
+
+  if (order == SORT_DESC) {
+    result.push(...matsGold)
+    result.push(...matsSilver)
+    result.push(...matsBronze)
+    result.push(...gemsGold)
+    result.push(...gemsSilver)
+    result.push(...gemsBronze)
+    result.push(...piecesGold)
+    result.push(...piecesSilver)
+  }
+
   return result
 }
 

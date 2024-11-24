@@ -4,6 +4,7 @@ import axios from 'axios'
 import { useStore } from '@/stores/store'
 import { sheetIds } from '@/static/sheets'
 import { mats } from '@/static/mats'
+import { SORT_ASC } from '@/static/constants'
 
 vi.mock('axios')
 
@@ -37,6 +38,7 @@ describe('Store test', () => {
     expect(store).toBeTruthy()
     expect(selectedSheet).toBe(sheetIds[0].url)
     expect(store.matsArray.length).toBeGreaterThan(1)
+    expect(store.sortOrder).toEqual(SORT_ASC)
   })
 
   it('setSelectedMat works as expected', () => {
