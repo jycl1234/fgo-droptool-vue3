@@ -1,48 +1,14 @@
-import { describe, it, expect } from 'vitest'
-import { mats } from '@/static/mats'
+import { describe, it, expect, vi } from 'vitest'
+import { mockMats } from '../__mocks__/mockMats'
+import { invalidRowData, validRowData } from '../__mocks__/mockRowData'
 import { convertToResultsRow, getImgUrl, sortMats } from '../utils'
 import { emptyRow } from '../constants'
 
-const mat = mats[0]
-const validRowData = {
-  values: [
-    {
-      unused: '[0]',
-    },
-    {
-      unused: '[1]',
-    },
-    {
-      formattedValue: 'area formattedValue',
-    },
-    {
-      formattedValue: 'quest formattedValue',
-      hyperlink: 'quest hyperlink',
-    },
-    {
-      formattedValue: 'ap formattedValue',
-    },
-    {
-      formattedValue: 'bpPerAp formattedValue',
-    },
-    {
-      formattedValue: 'apPerDrop formattedValue',
-    },
-    {
-      unused: '[7]',
-    },
-    {
-      formattedValue: 'dropChance formattedValue',
-    },
-    {
-      unused: '[9]',
-    },
-    {
-      formattedValue: 'runs formattedValue',
-    },
-  ],
-}
-const invalidRowData = { invalid: 'test data' }
+vi.mock('../mats', () => ({
+  mats: mockMats,
+}))
+
+const mat = mockMats[0]
 
 describe('Utils test', () => {
   it('convertToResultsRow works as expected', () => {
@@ -70,6 +36,6 @@ describe('Utils test', () => {
 
   it('sortMats works as expected', () => {
     const result = sortMats()
-    expect(result.length).toEqual(mats.length)
+    expect(result.length).toEqual(mockMats.length)
   })
 })
