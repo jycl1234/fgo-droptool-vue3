@@ -19,7 +19,6 @@ With the decision to use Vue, I knew that I would be spending a good amount of m
 
 ## TODO
 
-- add rarity filters
 - fill out README
 
 ## Project Hierarchy

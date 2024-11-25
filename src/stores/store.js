@@ -17,7 +17,7 @@ export const useStore = defineStore('store', () => {
   const selectedSheet = ref('')
   const selectedMat = ref({})
   const sortOrder = ref('')
-  const rarityFilters = ref([])
+  const rarityArray = ref([])
   const matsArray = ref([])
   const resultsArray = ref([])
   const isLoading = ref(false)
@@ -68,9 +68,10 @@ export const useStore = defineStore('store', () => {
   const initializeStore = () => {
     selectedSheet.value = sheetIds[0]?.url
     sortOrder.value = SORT_ASC
-    rarityFilters.value = [RARITY_GOLD, RARITY_SILVER, RARITY_BRONZE]
+    rarityArray.value = [RARITY_GOLD, RARITY_SILVER, RARITY_BRONZE]
     matsArray.value = sortMats({
       order: SORT_ASC,
+      rarities: rarityArray.value,
     })
   }
 
@@ -81,7 +82,7 @@ export const useStore = defineStore('store', () => {
     isLoading,
     isCollapsed,
     matsArray,
-    rarityFilters,
+    rarityArray,
     resultsArray,
     selectedSheet,
     selectedMat,

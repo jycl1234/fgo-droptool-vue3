@@ -70,30 +70,53 @@ and will not reorder mats inside of its rarity tier
 
 const sortMats = (options) => {
   const result = []
-  const { order } = options ?? {}
+  let { order, rarities } = options ?? {}
 
-  // default to ASC if not provided
+  // defaults to prevent breaking logic
+  if (!rarities) {
+    rarities = [RARITY_GOLD, RARITY_SILVER, RARITY_BRONZE]
+  }
 
-  if (!order || order == SORT_ASC) {
-    result.push(...matsBronze)
-    result.push(...matsSilver)
-    result.push(...matsGold)
-    result.push(...gemsBronze)
-    result.push(...gemsSilver)
-    result.push(...gemsGold)
-    result.push(...piecesSilver)
-    result.push(...piecesGold)
+  if (!order) {
+    order = SORT_ASC
+  }
+
+  if (order == SORT_ASC) {
+    if (rarities.includes(RARITY_BRONZE)) {
+      result.push(...matsBronze)
+      result.push(...gemsBronze)
+    }
+
+    if (rarities.includes(RARITY_SILVER)) {
+      result.push(...matsSilver)
+      result.push(...gemsSilver)
+      result.push(...piecesSilver)
+    }
+
+    if (rarities.includes(RARITY_GOLD)) {
+      result.push(...matsGold)
+      result.push(...gemsGold)
+      result.push(...piecesGold)
+    }
   }
 
   if (order == SORT_DESC) {
-    result.push(...matsGold)
-    result.push(...matsSilver)
-    result.push(...matsBronze)
-    result.push(...gemsGold)
-    result.push(...gemsSilver)
-    result.push(...gemsBronze)
-    result.push(...piecesGold)
-    result.push(...piecesSilver)
+    if (rarities.includes(RARITY_GOLD)) {
+      result.push(...matsGold)
+      result.push(...gemsGold)
+      result.push(...piecesGold)
+    }
+
+    if (rarities.includes(RARITY_SILVER)) {
+      result.push(...matsSilver)
+      result.push(...gemsSilver)
+      result.push(...piecesSilver)
+    }
+
+    if (rarities.includes(RARITY_BRONZE)) {
+      result.push(...matsBronze)
+      result.push(...gemsBronze)
+    }
   }
 
   return result

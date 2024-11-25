@@ -1,13 +1,13 @@
 <script setup>
 import { useStore } from '@/stores/store'
 import { storeToRefs } from 'pinia'
-import { SORT_ASC, SORT_DESC } from '@/static/constants'
+import { RARITY_BRONZE, RARITY_GOLD, RARITY_SILVER, SORT_ASC, SORT_DESC } from '@/static/constants'
 import { sortMats } from '@/static/utils'
 
-const { matsArray, sortOrder } = storeToRefs(useStore())
+const { matsArray, rarityArray, sortOrder } = storeToRefs(useStore())
 
-const handleChange = () => {
-  matsArray.value = sortMats({ order: sortOrder.value })
+const handleFilters = () => {
+  matsArray.value = sortMats({ order: sortOrder.value, rarities: rarityArray.value })
 }
 </script>
 
@@ -21,7 +21,7 @@ const handleChange = () => {
       name="sort"
       :id="SORT_ASC"
       :value="SORT_ASC"
-      @change="handleChange"
+      @change="handleFilters"
     />
     <label class="label--sort-order" data-testid="label--sort-order" :for="SORT_ASC"
       >Ascending</label
@@ -34,11 +34,38 @@ const handleChange = () => {
       name="sort"
       :id="SORT_DESC"
       :value="SORT_DESC"
-      @change="handleChange"
+      @change="handleFilters"
     />
     <label class="label--sort-order" data-testid="label--sort-order" :for="SORT_DESC"
       >Descending</label
     >
+    <input
+      v-model="rarityArray"
+      type="checkbox"
+      class="checkbox--rarity gold"
+      data-testid="checkbox--rarity"
+      :value="RARITY_GOLD"
+      @change="handleFilters"
+    />
+    <label class="label--rarity" data-testid="label--rarity">{{ RARITY_GOLD }}</label>
+    <input
+      v-model="rarityArray"
+      type="checkbox"
+      class="checkbox--rarity silver"
+      data-testid="checkbox--rarity"
+      :value="RARITY_SILVER"
+      @change="handleFilters"
+    />
+    <label class="label--rarity" data-testid="label--rarity">{{ RARITY_SILVER }}</label>
+    <input
+      v-model="rarityArray"
+      type="checkbox"
+      class="checkbox--rarity bronze"
+      data-testid="checkbox--rarity"
+      :value="RARITY_BRONZE"
+      @change="handleFilters"
+    />
+    <label class="label--rarity" data-testid="label--rarity">{{ RARITY_BRONZE }}</label>
   </div>
 </template>
 
@@ -46,11 +73,13 @@ const handleChange = () => {
 .wrapper--filter-selector {
   margin-left: 1rem;
 
-  .selector--sort-order {
+  .selector--sort-order,
+  .checkbox--rarity {
     margin-right: 0.3rem;
   }
 
-  .label--sort-order {
+  .label--sort-order,
+  .label--rarity {
     margin-right: 0.8rem;
   }
 }

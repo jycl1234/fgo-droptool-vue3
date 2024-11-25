@@ -39,9 +39,9 @@ describe('Store test', () => {
     expect(selectedSheet).toBe(sheetIds[0].url)
     expect(store.matsArray.length).toBeGreaterThan(1)
     expect(store.sortOrder).toEqual(SORT_ASC)
-    expect(store.rarityFilters).toContain(RARITY_BRONZE)
-    expect(store.rarityFilters).toContain(RARITY_SILVER)
-    expect(store.rarityFilters).toContain(RARITY_GOLD)
+    expect(store.rarityArray).toContain(RARITY_BRONZE)
+    expect(store.rarityArray).toContain(RARITY_SILVER)
+    expect(store.rarityArray).toContain(RARITY_GOLD)
   })
 
   it('setSelectedMat works as expected', () => {
