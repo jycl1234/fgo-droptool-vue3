@@ -1,14 +1,26 @@
-import { emptyRow, SORT_ASC, SORT_DESC } from '@/static/constants'
+import {
+  emptyRow,
+  RARITY_BRONZE,
+  RARITY_GOLD,
+  RARITY_SILVER,
+  SORT_ASC,
+  SORT_DESC,
+  TYPE_ASCENSION,
+  TYPE_MAT,
+  TYPE_SKILL,
+} from '@/static/constants'
 import { mats } from '@/static/mats'
 
-const matsGold = mats.filter((mat) => mat.type === 'mat' && mat.rarity === 'gold')
-const matsSilver = mats.filter((mat) => mat.type === 'mat' && mat.rarity === 'silver')
-const matsBronze = mats.filter((mat) => mat.type === 'mat' && mat.rarity === 'bronze')
-const piecesSilver = mats.filter((mat) => mat.type === 'ascension' && mat.rarity === 'silver')
-const piecesGold = mats.filter((mat) => mat.type === 'ascension' && mat.rarity === 'gold')
-const gemsBronze = mats.filter((mat) => mat.type === 'skill' && mat.rarity === 'bronze')
-const gemsSilver = mats.filter((mat) => mat.type === 'skill' && mat.rarity === 'silver')
-const gemsGold = mats.filter((mat) => mat.type === 'skill' && mat.rarity === 'gold')
+const matsGold = mats.filter((mat) => mat.type === TYPE_MAT && mat.rarity === RARITY_GOLD)
+const matsSilver = mats.filter((mat) => mat.type === TYPE_MAT && mat.rarity === RARITY_SILVER)
+const matsBronze = mats.filter((mat) => mat.type === TYPE_MAT && mat.rarity === RARITY_BRONZE)
+const piecesSilver = mats.filter(
+  (mat) => mat.type === TYPE_ASCENSION && mat.rarity === RARITY_SILVER,
+)
+const piecesGold = mats.filter((mat) => mat.type === TYPE_ASCENSION && mat.rarity === RARITY_GOLD)
+const gemsBronze = mats.filter((mat) => mat.type === TYPE_SKILL && mat.rarity === RARITY_BRONZE)
+const gemsSilver = mats.filter((mat) => mat.type === TYPE_SKILL && mat.rarity === RARITY_SILVER)
+const gemsGold = mats.filter((mat) => mat.type === TYPE_SKILL && mat.rarity === RARITY_GOLD)
 
 /*
 convertToResultsRow()

@@ -79,6 +79,12 @@
         <li>added sorting and filtering options</li>
       </ul>
     </div>
+    <div class="item" data-testid="item">
+      <h3>Day 8 (11/24/2024)</h3>
+      <ul>
+        <li>added rarity filters and new consts</li>
+      </ul>
+    </div>
   </div>
 </template>
 

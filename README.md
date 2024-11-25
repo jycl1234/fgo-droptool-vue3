@@ -19,7 +19,6 @@ With the decision to use Vue, I knew that I would be spending a good amount of m
 
 ## TODO
 
-- add sort order (gold -> silver -> bronze and vice versa)
 - add rarity filters
 - fill out README
 
@@ -56,6 +55,7 @@ With the decision to use Vue, I knew that I would be spending a good amount of m
 - new features
   -- improved err handling
   -- bookmarked/linkable searches
+  -- alphanumeric search?
   -- efficiency comparison
   -- multi-mat efficiency calculator
 

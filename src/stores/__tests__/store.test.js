@@ -4,7 +4,7 @@ import axios from 'axios'
 import { useStore } from '@/stores/store'
 import { sheetIds } from '@/static/sheets'
 import { mats } from '@/static/mats'
-import { SORT_ASC } from '@/static/constants'
+import { RARITY_BRONZE, RARITY_GOLD, RARITY_SILVER, SORT_ASC } from '@/static/constants'
 
 vi.mock('axios')
 
@@ -39,6 +39,9 @@ describe('Store test', () => {
     expect(selectedSheet).toBe(sheetIds[0].url)
     expect(store.matsArray.length).toBeGreaterThan(1)
     expect(store.sortOrder).toEqual(SORT_ASC)
+    expect(store.rarityFilters).toContain(RARITY_BRONZE)
+    expect(store.rarityFilters).toContain(RARITY_SILVER)
+    expect(store.rarityFilters).toContain(RARITY_GOLD)
   })
 
   it('setSelectedMat works as expected', () => {
