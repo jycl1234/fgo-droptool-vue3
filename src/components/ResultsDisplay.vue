@@ -4,7 +4,7 @@ import { storeToRefs } from 'pinia'
 import { convertToResultsRow } from '@/static/utils'
 import ResultsRow from '@/components/ResultsRow.vue'
 
-const { isLoading, resultsArray } = storeToRefs(useStore())
+const { isCollapsed, isLoading, resultsArray } = storeToRefs(useStore())
 </script>
 
 <template>
@@ -27,28 +27,33 @@ const { isLoading, resultsArray } = storeToRefs(useStore())
     </div>
     <div v-else class="wrapper--results-empty" data-testid="wrapper--results-empty">
       <span v-if="isLoading">loading...</span>
-      <span v-else>No results</span>
+      <span v-if="isCollapsed && !isLoading && resultsArray.length === 0">No results</span>
     </div>
   </div>
 </template>
 
 <style lang="scss">
 // unscoped css here to let child rows inherit while letting styles also apply to header in parent
-.wrapper--results-rows {
-  display: grid;
+.wrapper--results-display {
+  display: flex;
+  justify-content: center;
 
-  .wrapper--results-row {
+  .wrapper--results-rows {
     display: grid;
-    grid-template-columns: 144px 244px 60px 60px 60px 100px 100px;
-    font-size: 0.85rem;
 
-    .header {
-      font-weight: bold;
-      margin-bottom: 1rem;
-    }
+    .wrapper--results-row {
+      display: grid;
+      grid-template-columns: 144px 244px 60px 60px 60px 100px 100px;
+      font-size: 0.85rem;
 
-    .column {
-      text-align: left;
+      .header {
+        font-weight: bold;
+        margin-bottom: 1rem;
+      }
+
+      .column {
+        text-align: left;
+      }
     }
   }
 }

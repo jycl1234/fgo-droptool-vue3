@@ -22,5 +22,6 @@ import ResultsDisplay from '@/components/ResultsDisplay.vue'
 .wrapper--selectors {
   display: flex;
   flex-direction: row;
+  justify-content: center;
 }
 </style>

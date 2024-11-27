@@ -46,6 +46,7 @@ describe('ResultsDisplay', () => {
     expect(wrapper.find('[data-testid="wrapper--results-empty"]').text()).toContain('loading')
 
     store.isLoading = false
+    store.isCollapsed = true
     await wrapper.vm.$nextTick()
     expect(wrapper.find('[data-testid="wrapper--results-empty"]').text()).toContain('No results')
   })
