@@ -43,7 +43,8 @@ const { isCollapsed, isLoading, resultsArray } = storeToRefs(useStore())
 
     .wrapper--results-row {
       display: grid;
-      grid-template-columns: 144px 244px 60px 60px 60px 100px 100px;
+      grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+      column-gap: 0.5rem;
       font-size: 0.85rem;
 
       .header {
